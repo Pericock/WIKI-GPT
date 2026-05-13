@@ -1,0 +1,9 @@
+title: Wiki Técnica ASIR
+description: Documentación de despliegue, redes y sistemas.
+theme: minima # O puedes usar 'jekyll-theme-cayman'
+
+# Configuración del menú (si el tema lo soporta)
+header_pages:
+  - index.md
+  - linux.md
+  - redes.md
