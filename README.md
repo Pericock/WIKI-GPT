@@ -22,7 +22,8 @@ title: Bienvenido a WIKI-GPT
   </div>
 
   <!-- Tarjeta Redes -->
-<div style="border: 1px solid #ddd; border-radius: 8px; width: 250px; padding: 20px; text-align: center; box-shadow: 2px 2px 5px rgba(0,0,0,0.05);">
+<!-- Tarjeta Redes (MODIFICADA: Ahora apunta a assets/test.pdf) -->
+  <div style="border: 1px solid #ddd; border-radius: 8px; width: 250px; padding: 20px; text-align: center; box-shadow: 2px 2px 5px rgba(0,0,0,0.05);">
     <img src="https://img.icons8.com/color/96/000000/network.png" alt="Network Icon" style="width: 80px; height: 80px;">
     <h3>Redes & Comunicaciones</h3>
     <p style="font-size: 0.9em; color: #555;">Protocolos, enrutamiento, configuración de switches y direccionamiento.</p>
