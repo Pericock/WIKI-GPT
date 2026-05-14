@@ -64,3 +64,7 @@ Conoce al equipo detrás de la documentación técnica.
 <p style="text-align: center; font-size: 0.8em; color: #777; margin-top: 50px;">
 © 2024 WIKI-GPT Project. Contenido técnico para ASIR.
 </p>
+
+<p style="text-align: center; font-size: 0.8em; color: #777; margin-top: 50px;">
+© 2024 WIKI-GPT Project. Contenido técnico para ASIR.
+</p>
