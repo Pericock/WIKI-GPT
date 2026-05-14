@@ -1,32 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<wikiProject name="WIKI-GPT" version="1.0">
-    <team>
-        <member id="P01">
-            <name>Pedro</name>
-            <role>Administrador de Sistemas (Linux)</role>
-            <specialty>DevOps</specialty>
-        </member>
-        <member id="S02">
-            <name>Salvador</name>
-            <role>Especialista en Redes y CCNA</role>
-            <specialty>Networking</specialty>
-        </member>
-        <member id="A03">
-            <name>Abde</name>
-            <role>Seguridad y Hardening</role>
-            <specialty>Security</specialty>
-        </member>
-    </team>
-    <categories>
-        <category id="LIN">
-            <title>Linux &amp; Servidores</title>
-            <description>Tutoriales sobre Bash, servicios y administración.</description>
-            <icon>linux</icon>
-        </category>
-        <category id="NET">
-            <title>Redes &amp; Comunicaciones</title>
-            <description>Protocolos, enrutamiento y direccionamiento.</description>
-            <icon>network</icon>
-        </category>
-    </categories>
-</wikiProject>
+<wiki xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+      xsi:noNamespaceSchemaLocation="../schemas/wiki.xsd">
+    <configuracion>
+        <proyecto>WIKI-GPT</proyecto>
+        <equipo>Pedro, Salvador, Abde</equipo>
+        <ultima_actualizacion>2026-05-14</ultima_actualizacion>
+    </configuracion>
+    <modulos>
+        <modulo id="ISO">
+            <nombre>Implantación de Sistemas Operativos</nombre>
+            <responsable>Pedro</responsable>
+            <temas>
+                <tema>Administración de Linux</tema>
+                <tema>Servicios de Red</tema>
+            </temas>
+        </modulo>
+        <modulo id="PAR">
+            <nombre>Planificación y Administración de Redes</nombre>
+            <responsable>Salvador</responsable>
+            <temas>
+                <tema>VLANs y Trunking</tema>
+                <tema>Enrutamiento Estático</tema>
+            </temas>
+        </modulo>
+    </modulos>
+</wiki>
