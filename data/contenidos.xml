@@ -1,15 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<wiki xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../schemas/wiki.xsd">
-    <modulo nombre="Administración de Sistemas (IES Aljada)">
-        <tema id="1">
-            <titulo>Entorno de Red del Centro</titulo>
-            <contenido>El IES Aljada cuenta con infraestructuras de red locales gestionadas por el departamento de informática para los ciclos de ASIR y SMR.</contenido>
-        </tema>
-    </modulo>
-    <modulo nombre="Lenguajes de Marcas">
-        <tema id="2">
-            <titulo>Validación XSD</titulo>
-            <contenido>Uso de XML Schema para definir la estructura de la Wiki-GPT de Pedro, Salvador y Abde.</contenido>
-        </tema>
-    </modulo>
-</wiki>
+<wikiProject name="WIKI-GPT" version="1.0">
+    <team>
+        <member id="P01">
+            <name>Pedro</name>
+            <role>Administrador de Sistemas (Linux)</role>
+            <specialty>DevOps</specialty>
+        </member>
+        <member id="S02">
+            <name>Salvador</name>
+            <role>Especialista en Redes y CCNA</role>
+            <specialty>Networking</specialty>
+        </member>
+        <member id="A03">
+            <name>Abde</name>
+            <role>Seguridad y Hardening</role>
+            <specialty>Security</specialty>
+        </member>
+    </team>
+    <categories>
+        <category id="LIN">
+            <title>Linux &amp; Servidores</title>
+            <description>Tutoriales sobre Bash, servicios y administración.</description>
+            <icon>linux</icon>
+        </category>
+        <category id="NET">
+            <title>Redes &amp; Comunicaciones</title>
+            <description>Protocolos, enrutamiento y direccionamiento.</description>
+            <icon>network</icon>
+        </category>
+    </categories>
+</wikiProject>
