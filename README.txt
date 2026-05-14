@@ -42,7 +42,7 @@ title: Bienvenido a WIKI-GPT
     <img src="https://img.icons8.com/color/96/000000/database.png" alt="Database Icon" style="width: 80px; height: 80px;">
     <h3>Bases de Datos</h3>
     <p style="font-size: 0.9em; color: #555;">Diseño SQL, optimización de consultas, copias de seguridad y mantenimiento.</p>
-    <a href="/bbdd/" style="display: inline-block; margin-top: 10px; padding: 5px 15px; background-color: #007bff; color: white; border-radius: 4px; text-decoration: none;">Ver más</a>
+    <a href="/assets/" style="display: inline-block; margin-top: 10px; padding: 5px 15px; background-color: #007bff; color: white; border-radius: 4px; text-decoration: none;">Ver más</a>
   </div>
 
 </div>
