@@ -22,13 +22,12 @@ title: Bienvenido a WIKI-GPT
   </div>
 
   <!-- Tarjeta Redes -->
-  <div style="border: 1px solid #ddd; border-radius: 8px; width: 250px; padding: 20px; text-align: center; box-shadow: 2px 2px 5px rgba(0,0,0,0.05);">
+ <div style="border: 1px solid #ddd; border-radius: 8px; width: 250px; padding: 20px; text-align: center; box-shadow: 2px 2px 5px rgba(0,0,0,0.05);">
     <img src="https://img.icons8.com/color/96/000000/network.png" alt="Network Icon" style="width: 80px; height: 80px;">
     <h3>Redes & Comunicaciones</h3>
     <p style="font-size: 0.9em; color: #555;">Protocolos, enrutamiento, configuración de switches y direccionamiento.</p>
-    <a href="/redes/" style="display: inline-block; margin-top: 10px; padding: 5px 15px; background-color: #007bff; color: white; border-radius: 4px; text-decoration: none;">Ver más</a>
+    <a href="/assets/test.pdf" target="_blank" style="display: inline-block; margin-top: 10px; padding: 5px 15px; background-color: #007bff; color: white; border-radius: 4px; text-decoration: none;">Ver más</a>
   </div>
-
   <!-- Tarjeta Seguridad -->
   <div style="border: 1px solid #ddd; border-radius: 8px; width: 250px; padding: 20px; text-align: center; box-shadow: 2px 2px 5px rgba(0,0,0,0.05);">
     <img src="https://img.icons8.com/color/96/000000/shield.png" alt="Shield Icon" style="width: 80px; height: 80px;">
