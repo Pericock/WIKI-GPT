@@ -1,14 +1,14 @@
 // ============================================================
 //  WIKI-GPT — app.js
 //  Carga dinámica desde data/contenidos.xml
-//  Estructura real: <modulo id> > <nombre>, <responsable>, <temas> > <tema>
+//  Cada <tema pdf="ruta.pdf">Nombre</tema> genera un enlace al PDF
 // ============================================================
 
 async function cargarContenidos() {
   const container = document.getElementById('app-container');
 
   try {
-    const response = await fetch('/WIKI-GPT/data/contenidos.xml');
+    const response = await fetch('../data/contenidos.xml');
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
 
     const text = await response.text();
@@ -20,8 +20,7 @@ async function cargarContenidos() {
 
     container.innerHTML = '';
 
-    const modulos = xml.querySelectorAll('modulo');
-
+    const modulos = xml.getElementsByTagName('modulo');
     if (modulos.length === 0) {
       container.innerHTML = '<p class="error-msg">No se encontraron módulos en el XML.</p>';
       return;
@@ -31,25 +30,29 @@ async function cargarContenidos() {
       const id          = mod.getAttribute('id') || '—';
       const nombre      = getTagText(mod, 'nombre');
       const responsable = getTagText(mod, 'responsable');
-      const temas       = mod.querySelectorAll('tema');
+      const temas       = mod.getElementsByTagName('tema');
 
       const modDiv = document.createElement('div');
       modDiv.className = 'modulo-card';
 
       let temasHTML = '';
+      Array.from(temas).forEach(tema => {
+        const textoTema = tema.textContent.trim();
+        const pdfRuta   = tema.getAttribute('pdf');
 
-temas.forEach(tema => {
-    const nombreTema = tema.textContent.trim();
-    const pdf = tema.getAttribute('pdf');
-
-    temasHTML += `
-        <li class="tema-item">
-            <a href="${pdf}" class="tema-link">
-                ${nombreTema}
-            </a>
-        </li>
-    `;
-});
+        if (pdfRuta) {
+          // Si tiene PDF: enlace que abre en nueva pestaña
+          temasHTML += `
+            <li class="tema-item">
+              <a class="tema-link" href="${pdfRuta}" target="_blank" rel="noopener">
+                📄 ${textoTema}
+              </a>
+            </li>`;
+        } else {
+          // Sin PDF: texto plano
+          temasHTML += `<li class="tema-item">${textoTema}</li>`;
+        }
+      });
 
       modDiv.innerHTML = `
         <div class="modulo-header">
@@ -76,14 +79,14 @@ temas.forEach(tema => {
       <div class="error-msg">
         <strong>Error al cargar el XML</strong><br />
         ${e.message}<br />
-        <small>Ruta: <code>/WIKI-GPT/data/contenidos.xml</code></small>
+        <small>Asegúrate de usar Live Server y que la ruta a <code>data/contenidos.xml</code> sea correcta.</small>
       </div>
     `;
   }
 }
 
 function getTagText(parent, tagName) {
-  const el = parent.querySelector(tagName);
+  const el = parent.getElementsByTagName(tagName)[0];
   return el ? el.textContent.trim() : '—';
 }
 

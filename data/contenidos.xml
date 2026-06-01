@@ -14,10 +14,10 @@
       <nombre>Implantación de Sistemas Operativos</nombre>
       <responsable>Pedro</responsable>
       <temas>
-        <tema>Administracion de Windows</tema>
-        <tema>Administración y aseguramiento de la información.</tema>
-        <tema>Clientes del dominio</tema>
-        <tema>Administracion de dominios</tema>
+        <tema pdf="assets/Tema4_WindowsServer.pdf">Windows Server</tema>
+        <tema pdf="assets/Tema5_Seguridad.pdf">Seguridad en Sistemas</tema>
+        <tema pdf="assets/Tema6_Dominios.pdf">Dominios y Directorio Activo</tema>
+        <tema pdf="assets/Tema7_ClientesDominio.pdf">Clientes de Dominio</tema>
       </temas>
     </modulo>
 
@@ -25,10 +25,11 @@
       <nombre>Planificación y Administración de Redes</nombre>
       <responsable>Salvador</responsable>
       <temas>
-        <tema>VLANs y Trunking</tema>
-        <tema>Enrutamiento Estático</tema>
-        <tema>Redes inalambricas</tema>
-        <tema>Configuración de Switches Cisco</tema>
+        <tema pdf="assets/redesinalambricas.pdf">Redes Inalámbricas</tema>
+        <tema pdf="assets/ModeloE_R.pdf">Modelo E/R</tema>
+        <tema pdf="assets/tema6_Enrutamiento.pdf">Enrutamiento</tema>
+        <tema pdf="assets/VLAN_DOC.pdf">VLANs y Trunking</tema>
+        <tema pdf="assets/CONFIGURATIONDELSWITCH.pdf">Configuración de Switches</tema>
       </temas>
     </modulo>
 
@@ -36,10 +37,10 @@
       <nombre>Fundamentos de Hardware</nombre>
       <responsable>Abde</responsable>
       <temas>
-        <tema>Armado de la computadora</tema>
-        <tema>SO moviles</tema>
-        <tema>Impresoras</tema>
-        <tema>Seguridad</tema>
+        <tema pdf="assets/Capitulo 3 Armando de la Computadora.p...pdf">Armado de la Computadora</tema>
+        <tema pdf="assets/sgbd_apuntes.pdf">SGBD Apuntes</tema>
+        <tema pdf="assets/Modulo7_Impresoras.pdf">Impresoras</tema>
+        <tema pdf="assets/Unidad7_GestióndelaSeguridaddelosDato...pdf">Seguridad de Datos</tema>
       </temas>
     </modulo>
 
@@ -47,10 +48,10 @@
       <nombre>Bases de Datos</nombre>
       <responsable>Pedro</responsable>
       <temas>
-        <tema>Diseño logico</tema>
-        <tema>Seguridad de los datos</tema>
-        <tema>Contruccion de guiones</tema>
-        <tema>Sistema de almacenamiento</tema>
+        <tema pdf="assets/bd_t01_sistbd.pdf">Sistemas de Bases de Datos</tema>
+        <tema pdf="assets/Cap8_Amenazas y procedimientos de Seg...pdf">Amenazas y Seguridad</tema>
+        <tema pdf="assets/Capitulo6_Sistemas operativos móviles, Li...pdf">Sistemas Operativos Móviles</tema>
+        <tema pdf="assets/sgbd_apuntes.pdf">Administración SGBD</tema>
       </temas>
     </modulo>
 

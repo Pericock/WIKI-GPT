@@ -1,18 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
-  <!-- ============================================================
-       wiki.xsd — Esquema de validación para contenidos.xml
-       Proyecto: WIKI-GPT · ASIR
-       Estructura: wiki > configuracion + modulos > modulo > temas > tema
-       ============================================================ -->
-
   <!-- Elemento raíz -->
   <xs:element name="wiki">
     <xs:complexType>
       <xs:sequence>
 
-        <!-- Bloque de configuración global del proyecto -->
         <xs:element name="configuracion">
           <xs:complexType>
             <xs:sequence>
@@ -23,37 +16,34 @@
           </xs:complexType>
         </xs:element>
 
-        <!-- Bloque de módulos -->
         <xs:element name="modulos">
           <xs:complexType>
             <xs:sequence>
-
-              <!-- Cada módulo puede repetirse sin límite -->
               <xs:element name="modulo" maxOccurs="unbounded">
                 <xs:complexType>
                   <xs:sequence>
                     <xs:element name="nombre"      type="xs:string"/>
                     <xs:element name="responsable" type="xs:string"/>
-
-                    <!-- Lista de temas del módulo -->
                     <xs:element name="temas">
                       <xs:complexType>
                         <xs:sequence>
-                          <!-- Cada <tema> es un string simple, puede repetirse -->
-                          <xs:element name="tema" type="xs:string"
-                                      minOccurs="1" maxOccurs="unbounded"/>
+                          <!-- <tema> tiene texto (nombre del tema) y atributo pdf opcional -->
+                          <xs:element name="tema" minOccurs="1" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute name="pdf" type="xs:string" use="optional"/>
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>
                         </xs:sequence>
                       </xs:complexType>
                     </xs:element>
-
                   </xs:sequence>
-
-                  <!-- El atributo id es obligatorio en cada módulo -->
                   <xs:attribute name="id" type="xs:string" use="required"/>
-
                 </xs:complexType>
               </xs:element>
-
             </xs:sequence>
           </xs:complexType>
         </xs:element>
