@@ -37,9 +37,19 @@ async function cargarContenidos() {
       modDiv.className = 'modulo-card';
 
       let temasHTML = '';
-      temas.forEach(tema => {
-        temasHTML += `<li class="tema-item">${tema.textContent.trim()}</li>`;
-      });
+
+temas.forEach(tema => {
+    const nombreTema = tema.textContent.trim();
+    const pdf = tema.getAttribute('pdf');
+
+    temasHTML += `
+        <li class="tema-item">
+            <a href="${pdf}" class="tema-link">
+                ${nombreTema}
+            </a>
+        </li>
+    `;
+});
 
       modDiv.innerHTML = `
         <div class="modulo-header">
