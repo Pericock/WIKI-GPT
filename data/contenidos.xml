@@ -15,9 +15,9 @@
       <responsable>Pedro</responsable>
       <temas>
         <tema>Administración de Linux</tema>
-        <tema>Servicios de Red</tema>
-        <tema>Gestión de usuarios y permisos</tema>
-        <tema>Automatización con Bash</tema>
+        <tema>Administracion de Windows</tema>
+        <tema>Clientes del dominio</tema>
+        <tema>Administracion de dominios</tema>
       </temas>
     </modulo>
 
@@ -27,19 +27,19 @@
       <temas>
         <tema>VLANs y Trunking</tema>
         <tema>Enrutamiento Estático</tema>
-        <tema>Protocolo OSPF</tema>
+        <tema>Redes inalambricas</tema>
         <tema>Configuración de Switches Cisco</tema>
       </temas>
     </modulo>
 
     <modulo id="SEG">
-      <nombre>Seguridad y Alta Disponibilidad</nombre>
+      <nombre>Fundamentos de Hardware</nombre>
       <responsable>Abde</responsable>
       <temas>
-        <tema>Hardening de servidores</tema>
-        <tema>Cortafuegos con iptables</tema>
-        <tema>Acceso seguro con SSH</tema>
-        <tema>Gestión de certificados SSL/TLS</tema>
+        <tema>Armado de la computadora</tema>
+        <tema>SO moviles</tema>
+        <tema>Impresoras</tema>
+        <tema>Seguridad</tema>
       </temas>
     </modulo>
 
@@ -47,9 +47,9 @@
       <nombre>Bases de Datos</nombre>
       <responsable>Pedro</responsable>
       <temas>
-        <tema>Diseño relacional y SQL</tema>
-        <tema>Optimización de consultas</tema>
-        <tema>Copias de seguridad y restauración</tema>
+        <tema>Diseño logico</tema>
+        <tema>Edicion de los datos</tema>
+        <tema>Contruccion de guiones</tema>
         <tema>Administración de MySQL/MariaDB</tema>
       </temas>
     </modulo>
