@@ -9,7 +9,7 @@ async function cargarContenidos() {
 
   try {
     // 1. Fetch del XML (requiere servidor local, p.ej. Live Server)
-    const response = await fetch('WIKI-GPT/data/contenidos.xml');
+    const response = await fetch('/WIKI-GPT/data/contenidos.xml');
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
 
     const text = await response.text();
