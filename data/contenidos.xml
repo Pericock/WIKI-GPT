@@ -14,8 +14,8 @@
       <nombre>Implantación de Sistemas Operativos</nombre>
       <responsable>Pedro</responsable>
       <temas>
-        <tema>Administración de Linux</tema>
         <tema>Administracion de Windows</tema>
+        <tema>Administración y aseguramiento de la información.</tema>
         <tema>Clientes del dominio</tema>
         <tema>Administracion de dominios</tema>
       </temas>
@@ -48,7 +48,7 @@
       <responsable>Pedro</responsable>
       <temas>
         <tema>Diseño logico</tema>
-        <tema>Edicion de los datos</tema>
+        <tema>Seguridad de los datos</tema>
         <tema>Contruccion de guiones</tema>
         <tema>Sistema de almacenamiento</tema>
       </temas>
