@@ -36,12 +36,10 @@
       <nombre>Seguridad y Alta Disponibilidad</nombre>
       <responsable>Abde</responsable>
       <temas>
-        
         <tema pdf="assets/Cap8_Amenazas y procedimientos de Seguridad.pdf">Amenazas y Procedimientos de Seguridad</tema>
         <tema pdf="assets/Capitulo6_Sistemas operativos moviles, Linux y OSX.pdf">Sistemas Operativos Móviles, Linux y OSX</tema>
         <tema pdf="assets/Capitulo 3 Armando de la Computadora.pdf">Armado de la Computadora</tema>
         <tema pdf="assets/Modulo7_Impresoras.pdf">Impresoras</tema>
-       
       </temas>
     </modulo>
 
@@ -52,8 +50,7 @@
         <tema pdf="assets/bd_t01_sistbd.pdf">Sistemas de Bases de Datos</tema>
         <tema pdf="assets/ModeloE_R.pdf">Modelo Entidad/Relación</tema>
         <tema pdf="assets/Unidad7_GestiondelaSeguridaddelosDatos.pdf">Gestión de la Seguridad de los Datos</tema>
-        <tema pdf="assets/sgbd_apuntes.pdf">Apuntes SGB</tema>
-        
+        <tema pdf="assets/sgbd_apuntes.pdf">Apuntes SGBD</tema>
       </temas>
     </modulo>
 
