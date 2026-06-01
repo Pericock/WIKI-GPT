@@ -26,7 +26,6 @@
       <responsable>Salvador</responsable>
       <temas>
         <tema pdf="assets/redesinalambricas.pdf">Redes Inalámbricas</tema>
-        <tema pdf="assets/ModeloE_R.pdf">Modelo E/R</tema>
         <tema pdf="assets/tema6_Enrutamiento.pdf">Enrutamiento</tema>
         <tema pdf="assets/VLAN_DOC.pdf">VLANs y Trunking</tema>
         <tema pdf="assets/CONFIGURATIONDELSWITCH.pdf">Configuración de Switches</tema>
@@ -37,10 +36,11 @@
       <nombre>Fundamentos de Hardware</nombre>
       <responsable>Abde</responsable>
       <temas>
-        <tema pdf="assets/Capitulo 3 Armando de la Computadora.p...pdf">Armado de la Computadora</tema>
-        <tema pdf="assets/sgbd_apuntes.pdf">SGBD Apuntes</tema>
+        <tema pdf="assets/Capitulo 3 Armando de la Computadora.pdf">Armado de la Computadora</tema>
+         <tema pdf="assets/Capítulo6_Sistemas operativos móviles, Linux y OSX.pdf">Sistemas Operativos Móviles</tema>
+         <tema pdf="assets/Cap8_Amenazas y procedimientos de Seguridad.pdf">Amenazas y Seguridad</tema>
         <tema pdf="assets/Modulo7_Impresoras.pdf">Impresoras</tema>
-        <tema pdf="assets/Unidad7_GestióndelaSeguridaddelosDato...pdf">Seguridad de Datos</tema>
+        
       </temas>
     </modulo>
 
@@ -49,9 +49,9 @@
       <responsable>Pedro</responsable>
       <temas>
         <tema pdf="assets/bd_t01_sistbd.pdf">Sistemas de Bases de Datos</tema>
-        <tema pdf="assets/Cap8_Amenazas y procedimientos de Seg...pdf">Amenazas y Seguridad</tema>
-        <tema pdf="assets/Capitulo6_Sistemas operativos móviles, Li...pdf">Sistemas Operativos Móviles</tema>
-        <tema pdf="assets/sgbd_apuntes.pdf">Administración SGBD</tema>
+        <tema pdf="assets/sgbd_apuntes.pdf">SGBD Apuntes</tema>
+        <tema pdf="assets/Unidad7_GestióndelaSeguridaddelosDato...pdf">Seguridad de Datos</tema>
+        <tema pdf="assets/ModeloE_R.pdf">Modelo E/R</tema>
       </temas>
     </modulo>
 
