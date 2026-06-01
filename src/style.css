@@ -1,13 +1,12 @@
-cat > /mnt/user-data/outputs/style.css << 'CSSEOF'
 /* ============================================================
    WIKI-GPT — style.css  (v3)
    Basado en el diseño original: dark-tech editorial neón verde-azul
    Añadido: animación de entrada escalonada tipo "deal de cartas"
             + soporte para tema-link (PDFs) + --mod-accent por tarjeta
    ============================================================ */
-
+ 
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Syne:wght@400;700;800&family=Inter:wght@400;500;600&display=swap');
-
+ 
 /* ── Variables ─────────────────────────────────────────────── */
 :root {
   --bg:         #0d1117;
@@ -25,11 +24,11 @@ cat > /mnt/user-data/outputs/style.css << 'CSSEOF'
   --font-mono:  'JetBrains Mono', monospace;
   --font-body:  'Inter', sans-serif;
 }
-
+ 
 /* ── Reset ─────────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
-
+ 
 body {
   background: var(--bg);
   color: var(--text);
@@ -38,7 +37,7 @@ body {
   line-height: 1.6;
   min-height: 100vh;
 }
-
+ 
 /* ── HEADER ────────────────────────────────────────────────── */
 .site-header {
   background: var(--bg2);
@@ -49,7 +48,7 @@ body {
   z-index: 100;
   backdrop-filter: blur(8px);
 }
-
+ 
 .header-inner {
   max-width: 1100px;
   margin: 0 auto;
@@ -60,7 +59,7 @@ body {
   flex-wrap: wrap;
   gap: 12px;
 }
-
+ 
 .logo-tag {
   font-family: var(--font-mono);
   font-size: 1.25rem;
@@ -68,15 +67,15 @@ body {
   color: var(--accent);
   letter-spacing: -0.5px;
 }
-
+ 
 .logo-sub {
   font-size: 0.75rem;
   color: var(--text-muted);
   margin-top: 2px;
 }
-
+ 
 .header-meta { display: flex; gap: 8px; flex-wrap: wrap; }
-
+ 
 .badge {
   font-family: var(--font-mono);
   font-size: 0.72rem;
@@ -87,7 +86,7 @@ body {
   color: var(--text-muted);
 }
 .badge-accent { border-color: var(--accent); color: var(--accent); }
-
+ 
 /* ── HERO ──────────────────────────────────────────────────── */
 .hero {
   max-width: 1100px;
@@ -98,7 +97,7 @@ body {
   gap: 48px;
   align-items: center;
 }
-
+ 
 .hero-title {
   font-family: var(--font-title);
   font-size: clamp(2.2rem, 5vw, 3.4rem);
@@ -107,14 +106,14 @@ body {
   color: var(--text);
 }
 .hero-title em { font-style: normal; color: var(--accent2); }
-
+ 
 .hero-desc {
   color: var(--text-muted);
   margin: 18px 0 28px;
   font-size: 1rem;
   max-width: 420px;
 }
-
+ 
 .btn-primary {
   display: inline-block;
   padding: 12px 28px;
@@ -132,7 +131,7 @@ body {
   transform: translateY(-2px);
   box-shadow: 0 0 32px rgba(57, 211, 83, 0.45);
 }
-
+ 
 .hero-code {
   background: var(--bg2);
   border: 1px solid var(--border);
@@ -144,22 +143,22 @@ body {
 .c-tag  { color: #79c0ff; }
 .c-attr { color: #ffa657; }
 .c-val  { color: var(--accent); }
-
+ 
 /* ── SECTIONS ──────────────────────────────────────────────── */
 .section { padding: 64px 0; }
-
+ 
 .section-dark {
   background: var(--bg2);
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
 }
-
+ 
 .section-inner {
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 24px;
 }
-
+ 
 .section-title {
   font-family: var(--font-title);
   font-size: 1.8rem;
@@ -167,9 +166,9 @@ body {
   margin-bottom: 32px;
   color: var(--text);
 }
-
+ 
 .tag-prefix { font-family: var(--font-mono); color: var(--accent); margin-right: 6px; }
-
+ 
 .section-desc {
   color: var(--text-muted);
   margin-top: -20px;
@@ -184,14 +183,14 @@ body {
   padding: 2px 6px;
   border-radius: 4px;
 }
-
+ 
 /* ── TECH GRID ─────────────────────────────────────────────── */
 .tech-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
   gap: 16px;
 }
-
+ 
 .tech-card {
   background: var(--card-bg);
   border: 1px solid var(--border);
@@ -206,21 +205,21 @@ body {
 .tech-icon { font-size: 1.6rem; }
 .tech-card strong { font-family: var(--font-mono); color: var(--accent2); font-size: 0.95rem; }
 .tech-card span   { color: var(--text-muted); font-size: 0.82rem; line-height: 1.5; }
-
+ 
 /* ── MÓDULOS DINÁMICOS ─────────────────────────────────────── */
 .modulos-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 20px;
 }
-
+ 
 /* Animación de entrada tipo "deal de cartas" */
 @keyframes cardDeal {
   0%   { opacity: 0; transform: translateX(48px) rotate(4deg) scale(0.92); }
   60%  { opacity: 1; transform: translateX(-4px) rotate(-0.5deg) scale(1.01); }
   100% { opacity: 1; transform: translateX(0) rotate(0deg) scale(1); }
 }
-
+ 
 .modulo-card {
   --mod-accent: var(--accent);   /* sobreescrito por app.js por módulo */
   background: var(--card-bg);
@@ -232,13 +231,13 @@ body {
   opacity: 0;
   animation: cardDeal 0.5s cubic-bezier(0.23, 1, 0.32, 1) forwards;
 }
-
+ 
 .modulo-card:hover {
   border-color: var(--mod-accent);
   transform: translateY(-5px);
   box-shadow: 0 12px 32px rgba(0,0,0,0.4), 0 0 0 1px var(--mod-accent);
 }
-
+ 
 .modulo-header {
   background: var(--bg3);
   padding: 16px 20px;
@@ -247,9 +246,9 @@ body {
   gap: 12px;
   border-bottom: 1px solid var(--border);
 }
-
+ 
 .modulo-emoji { font-size: 1.6rem; flex-shrink: 0; }
-
+ 
 .modulo-id {
   font-family: var(--font-mono);
   font-size: 0.72rem;
@@ -263,7 +262,7 @@ body {
   display: inline-block;
   margin-bottom: 4px;
 }
-
+ 
 .modulo-nombre {
   font-family: var(--font-title);
   font-size: 1rem;
@@ -271,9 +270,9 @@ body {
   color: var(--text);
   line-height: 1.3;
 }
-
+ 
 .modulo-body { padding: 20px; }
-
+ 
 .modulo-responsable {
   font-size: 0.83rem;
   color: var(--text-muted);
@@ -281,17 +280,17 @@ body {
 }
 .modulo-responsable .label { margin-right: 4px; }
 .modulo-responsable strong { color: var(--accent2); }
-
+ 
 /* ── Lista de temas ──────────────────────────────────────────── */
 .temas-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
-
+ 
 .tema-item {
   font-size: 0.84rem;
   color: var(--text);
   display: flex;
   align-items: center;
 }
-
+ 
 /* Tema sin enlace: barra lateral de color */
 .tema-item:not(:has(.tema-link)) {
   padding: 8px 12px;
@@ -300,7 +299,7 @@ body {
   border-radius: 0 6px 6px 0;
   gap: 8px;
 }
-
+ 
 /* Tema con enlace al PDF */
 .tema-link {
   display: flex;
@@ -316,15 +315,15 @@ body {
   font-size: 0.84rem;
   transition: background 0.15s, color 0.15s, border-left-color 0.15s;
 }
-
+ 
 .tema-link:hover {
   background: color-mix(in srgb, var(--mod-accent) 15%, var(--bg3));
   color: var(--text);
   border-left-color: var(--mod-accent);
 }
-
+ 
 .pdf-icon { font-size: 0.9rem; flex-shrink: 0; }
-
+ 
 .sin-temas {
   padding: 8px 12px;
   color: var(--text-muted);
@@ -333,7 +332,7 @@ body {
   border-radius: 0 6px 6px 0;
   background: var(--bg3);
 }
-
+ 
 /* ── LOADING / ERROR ───────────────────────────────────────── */
 .loading-state {
   grid-column: 1 / -1;
@@ -344,7 +343,7 @@ body {
   padding: 48px;
   color: var(--text-muted);
 }
-
+ 
 .spinner {
   width: 32px;
   height: 32px;
@@ -354,7 +353,7 @@ body {
   animation: spin 0.8s linear infinite;
 }
 @keyframes spin { to { transform: rotate(360deg); } }
-
+ 
 .error-msg {
   grid-column: 1 / -1;
   background: rgba(247, 129, 102, 0.1);
@@ -366,14 +365,14 @@ body {
   line-height: 1.7;
 }
 .error-msg code { font-family: var(--font-mono); font-size: 0.82rem; }
-
+ 
 /* ── TEAM GRID ─────────────────────────────────────────────── */
 .team-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 20px;
 }
-
+ 
 .team-card {
   background: var(--bg3);
   border: 1px solid var(--border);
@@ -382,7 +381,7 @@ body {
   transition: border-color 0.2s;
 }
 .team-card:hover { border-color: var(--accent2); }
-
+ 
 .team-avatar {
   width: 48px;
   height: 48px;
@@ -397,9 +396,9 @@ body {
   justify-content: center;
   margin-bottom: 14px;
 }
-
+ 
 .team-card h3 { font-family: var(--font-title); font-size: 1.15rem; font-weight: 700; margin-bottom: 6px; }
-
+ 
 .role-badge {
   display: inline-block;
   font-family: var(--font-mono);
@@ -411,10 +410,10 @@ body {
   border-radius: 20px;
   margin-bottom: 12px;
 }
-
+ 
 .team-card p       { font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; }
 .team-card p strong{ color: var(--text); }
-
+ 
 /* ── FOOTER ────────────────────────────────────────────────── */
 .site-footer {
   border-top: 1px solid var(--border);
@@ -433,11 +432,10 @@ body {
   padding: 2px 8px;
   border-radius: 4px;
 }
-
+ 
 /* ── RESPONSIVE ────────────────────────────────────────────── */
 @media (max-width: 720px) {
   .hero { grid-template-columns: 1fr; }
   .hero-code { display: none; }
   .section-title { font-size: 1.4rem; }
 }
-CSSEOF
