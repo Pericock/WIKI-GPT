@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <wiki xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:noNamespaceSchemaLocation="../schemas/wiki.xsd">
+
   <configuracion>
     <proyecto>WIKI-GPT</proyecto>
     <equipo>Pedro, Salvador, Abde</equipo>
     <ultima_actualizacion>2026-06-01</ultima_actualizacion>
   </configuracion>
+
   <modulos>
+
     <modulo id="ISO">
       <nombre>Implantación de Sistemas Operativos</nombre>
       <responsable>Pedro</responsable>
@@ -17,6 +20,7 @@
         <tema>Automatización con Bash</tema>
       </temas>
     </modulo>
+
     <modulo id="PAR">
       <nombre>Planificación y Administración de Redes</nombre>
       <responsable>Salvador</responsable>
@@ -27,6 +31,7 @@
         <tema>Configuración de Switches Cisco</tema>
       </temas>
     </modulo>
+
     <modulo id="SEG">
       <nombre>Seguridad y Alta Disponibilidad</nombre>
       <responsable>Abde</responsable>
@@ -37,6 +42,7 @@
         <tema>Gestión de certificados SSL/TLS</tema>
       </temas>
     </modulo>
+
     <modulo id="BBDD">
       <nombre>Bases de Datos</nombre>
       <responsable>Pedro</responsable>
@@ -47,5 +53,7 @@
         <tema>Administración de MySQL/MariaDB</tema>
       </temas>
     </modulo>
+
   </modulos>
+
 </wiki>
