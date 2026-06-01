@@ -1,8 +1,12 @@
+cat > /mnt/user-data/outputs/style.css << 'CSSEOF'
 /* ============================================================
-   WIKI-GPT — style.css
-   Diseño: dark-tech editorial con acento neón verde-azul
-   Fuentes: Syne (títulos), JetBrains Mono (código), Inter (cuerpo)
+   WIKI-GPT — style.css  (v3)
+   Basado en el diseño original: dark-tech editorial neón verde-azul
+   Añadido: animación de entrada escalonada tipo "deal de cartas"
+            + soporte para tema-link (PDFs) + --mod-accent por tarjeta
    ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Syne:wght@400;700;800&family=Inter:wght@400;500;600&display=swap');
 
 /* ── Variables ─────────────────────────────────────────────── */
 :root {
@@ -24,7 +28,6 @@
 
 /* ── Reset ─────────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
 html { scroll-behavior: smooth; }
 
 body {
@@ -103,10 +106,7 @@ body {
   line-height: 1.1;
   color: var(--text);
 }
-.hero-title em {
-  font-style: normal;
-  color: var(--accent2);
-}
+.hero-title em { font-style: normal; color: var(--accent2); }
 
 .hero-desc {
   color: var(--text-muted);
@@ -140,14 +140,10 @@ body {
   padding: 28px;
   overflow-x: auto;
 }
-.hero-code pre {
-  font-family: var(--font-mono);
-  font-size: 0.88rem;
-  line-height: 1.8;
-}
-.c-tag   { color: #79c0ff; }
-.c-attr  { color: #ffa657; }
-.c-val   { color: var(--accent); }
+.hero-code pre { font-family: var(--font-mono); font-size: 0.88rem; line-height: 1.8; }
+.c-tag  { color: #79c0ff; }
+.c-attr { color: #ffa657; }
+.c-val  { color: var(--accent); }
 
 /* ── SECTIONS ──────────────────────────────────────────────── */
 .section { padding: 64px 0; }
@@ -171,13 +167,8 @@ body {
   margin-bottom: 32px;
   color: var(--text);
 }
-.section-title.light { color: var(--text); }
 
-.tag-prefix {
-  font-family: var(--font-mono);
-  color: var(--accent);
-  margin-right: 6px;
-}
+.tag-prefix { font-family: var(--font-mono); color: var(--accent); margin-right: 6px; }
 
 .section-desc {
   color: var(--text-muted);
@@ -211,21 +202,10 @@ body {
   gap: 8px;
   transition: border-color 0.2s, transform 0.15s;
 }
-.tech-card:hover {
-  border-color: var(--accent2);
-  transform: translateY(-3px);
-}
+.tech-card:hover { border-color: var(--accent2); transform: translateY(-3px); }
 .tech-icon { font-size: 1.6rem; }
-.tech-card strong {
-  font-family: var(--font-mono);
-  color: var(--accent2);
-  font-size: 0.95rem;
-}
-.tech-card span {
-  color: var(--text-muted);
-  font-size: 0.82rem;
-  line-height: 1.5;
-}
+.tech-card strong { font-family: var(--font-mono); color: var(--accent2); font-size: 0.95rem; }
+.tech-card span   { color: var(--text-muted); font-size: 0.82rem; line-height: 1.5; }
 
 /* ── MÓDULOS DINÁMICOS ─────────────────────────────────────── */
 .modulos-grid {
@@ -234,22 +214,29 @@ body {
   gap: 20px;
 }
 
+/* Animación de entrada tipo "deal de cartas" */
+@keyframes cardDeal {
+  0%   { opacity: 0; transform: translateX(48px) rotate(4deg) scale(0.92); }
+  60%  { opacity: 1; transform: translateX(-4px) rotate(-0.5deg) scale(1.01); }
+  100% { opacity: 1; transform: translateX(0) rotate(0deg) scale(1); }
+}
+
 .modulo-card {
+  --mod-accent: var(--accent);   /* sobreescrito por app.js por módulo */
   background: var(--card-bg);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   overflow: hidden;
-  transition: border-color 0.2s, transform 0.15s;
-  animation: fadeUp 0.4s ease both;
-}
-.modulo-card:hover {
-  border-color: var(--accent);
-  transform: translateY(-4px);
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+  /* Animación de entrada */
+  opacity: 0;
+  animation: cardDeal 0.5s cubic-bezier(0.23, 1, 0.32, 1) forwards;
 }
 
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(16px); }
-  to   { opacity: 1; transform: translateY(0); }
+.modulo-card:hover {
+  border-color: var(--mod-accent);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.4), 0 0 0 1px var(--mod-accent);
 }
 
 .modulo-header {
@@ -261,16 +248,20 @@ body {
   border-bottom: 1px solid var(--border);
 }
 
+.modulo-emoji { font-size: 1.6rem; flex-shrink: 0; }
+
 .modulo-id {
   font-family: var(--font-mono);
   font-size: 0.72rem;
   font-weight: 600;
-  background: rgba(57, 211, 83, 0.12);
-  color: var(--accent);
-  border: 1px solid rgba(57, 211, 83, 0.3);
+  color: var(--mod-accent);
+  border: 1px solid var(--mod-accent);
+  background: color-mix(in srgb, var(--mod-accent) 10%, transparent);
   padding: 3px 8px;
   border-radius: 4px;
   white-space: nowrap;
+  display: inline-block;
+  margin-bottom: 4px;
 }
 
 .modulo-nombre {
@@ -291,26 +282,56 @@ body {
 .modulo-responsable .label { margin-right: 4px; }
 .modulo-responsable strong { color: var(--accent2); }
 
-.temas-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
+/* ── Lista de temas ──────────────────────────────────────────── */
+.temas-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
 
 .tema-item {
   font-size: 0.84rem;
   color: var(--text);
-  padding: 8px 12px;
-  background: var(--bg3);
-  border-left: 3px solid var(--accent);
-  border-radius: 0 6px 6px 0;
+  display: flex;
+  align-items: center;
 }
 
-.tema-item.sin-temas {
+/* Tema sin enlace: barra lateral de color */
+.tema-item:not(:has(.tema-link)) {
+  padding: 8px 12px;
+  background: var(--bg3);
+  border-left: 3px solid var(--mod-accent);
+  border-radius: 0 6px 6px 0;
+  gap: 8px;
+}
+
+/* Tema con enlace al PDF */
+.tema-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 8px 12px;
+  color: var(--text);
+  text-decoration: none;
+  background: var(--bg3);
+  border-left: 3px solid var(--mod-accent);
+  border-radius: 0 6px 6px 0;
+  font-size: 0.84rem;
+  transition: background 0.15s, color 0.15s, border-left-color 0.15s;
+}
+
+.tema-link:hover {
+  background: color-mix(in srgb, var(--mod-accent) 15%, var(--bg3));
+  color: var(--text);
+  border-left-color: var(--mod-accent);
+}
+
+.pdf-icon { font-size: 0.9rem; flex-shrink: 0; }
+
+.sin-temas {
+  padding: 8px 12px;
   color: var(--text-muted);
-  border-left-color: var(--border);
   font-style: italic;
+  border-left: 3px solid var(--border);
+  border-radius: 0 6px 6px 0;
+  background: var(--bg3);
 }
 
 /* ── LOADING / ERROR ───────────────────────────────────────── */
@@ -344,10 +365,7 @@ body {
   font-size: 0.9rem;
   line-height: 1.7;
 }
-.error-msg code {
-  font-family: var(--font-mono);
-  font-size: 0.82rem;
-}
+.error-msg code { font-family: var(--font-mono); font-size: 0.82rem; }
 
 /* ── TEAM GRID ─────────────────────────────────────────────── */
 .team-grid {
@@ -380,12 +398,7 @@ body {
   margin-bottom: 14px;
 }
 
-.team-card h3 {
-  font-family: var(--font-title);
-  font-size: 1.15rem;
-  font-weight: 700;
-  margin-bottom: 6px;
-}
+.team-card h3 { font-family: var(--font-title); font-size: 1.15rem; font-weight: 700; margin-bottom: 6px; }
 
 .role-badge {
   display: inline-block;
@@ -399,12 +412,8 @@ body {
   margin-bottom: 12px;
 }
 
-.team-card p {
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  line-height: 1.6;
-}
-.team-card p strong { color: var(--text); }
+.team-card p       { font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; }
+.team-card p strong{ color: var(--text); }
 
 /* ── FOOTER ────────────────────────────────────────────────── */
 .site-footer {
@@ -414,13 +423,7 @@ body {
   color: var(--text-muted);
   font-size: 0.82rem;
 }
-.footer-stack {
-  margin-top: 6px;
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  flex-wrap: wrap;
-}
+.footer-stack { margin-top: 6px; display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; }
 .footer-stack code {
   font-family: var(--font-mono);
   font-size: 0.75rem;
@@ -437,3 +440,4 @@ body {
   .hero-code { display: none; }
   .section-title { font-size: 1.4rem; }
 }
+CSSEOF
