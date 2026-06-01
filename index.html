@@ -11,6 +11,7 @@
 </head>
 <body>
 
+  <!-- HEADER -->
   <header class="site-header">
     <div class="header-inner">
       <div class="logo-block">
@@ -26,6 +27,7 @@
 
   <main>
 
+    <!-- HERO -->
     <section class="hero">
       <div class="hero-inner">
         <h1 class="hero-title">Documentación Técnica<br /><em>para ASIR</em></h1>
@@ -42,6 +44,7 @@
       </div>
     </section>
 
+    <!-- TECNOLOGÍAS -->
     <section class="section" id="tecnologias">
       <div class="section-inner">
         <h2 class="section-title"><span class="tag-prefix"></span> Tecnologías empleadas</h2>
@@ -75,21 +78,21 @@
       </div>
     </section>
 
+    <!-- MÓDULOS DINÁMICOS -->
     <section class="section" id="modulos">
       <div class="section-inner">
         <h2 class="section-title"><span class="tag-prefix"></span> Módulos del proyecto</h2>
         <p class="section-desc">Cargados dinámicamente desde <code>data/contenidos.xml</code></p>
-        
-        <div id="modulos-grid" class="modulos-grid">
+        <div id="app-container" class="modulos-grid">
           <div class="loading-state">
             <span class="spinner"></span>
             <p>Cargando contenidos XML…</p>
           </div>
         </div>
-
       </div>
     </section>
 
+    <!-- COLABORADORES -->
     <section class="section section-dark" id="colaboradores">
       <div class="section-inner">
         <h2 class="section-title light"><span class="tag-prefix"></span> Equipo &amp; Reparto de tareas</h2>
@@ -118,11 +121,12 @@
 
   </main>
 
+  <!-- FOOTER -->
   <footer class="site-footer">
     <p>© 2024 WIKI-GPT Project &mdash; Contenido técnico para ASIR</p>
     <p class="footer-stack"><code>HTML5</code> + <code>CSS3</code> + <code>XML/XSD</code> + <code>JavaScript</code></p>
   </footer>
 
-  <script src="src/app.js" defer></script>
+  <script src="src/app.js"></script>
 </body>
 </html>
