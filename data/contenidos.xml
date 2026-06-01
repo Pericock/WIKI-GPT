@@ -1,27 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<wiki xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+<wiki xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:noNamespaceSchemaLocation="../schemas/wiki.xsd">
-    <configuracion>
-        <proyecto>WIKI-GPT</proyecto>
-        <equipo>Pedro, Salvador, Abde</equipo>
-        <ultima_actualizacion>2026-05-14</ultima_actualizacion>
-    </configuracion>
-    <modulos>
-        <modulo id="ISO">
-            <nombre>Implantación de Sistemas Operativos</nombre>
-            <responsable>Pedro</responsable>
-            <temas>
-                <tema>Administración de Linux</tema>
-                <tema>Servicios de Red</tema>
-            </temas>
-        </modulo>
-        <modulo id="PAR">
-            <nombre>Planificación y Administración de Redes</nombre>
-            <responsable>Salvador</responsable>
-            <temas>
-                <tema>VLANs y Trunking</tema>
-                <tema>Enrutamiento Estático</tema>
-            </temas>
-        </modulo>
-    </modulos>
+
+  <configuracion>
+    <proyecto>WIKI-GPT</proyecto>
+    <equipo>Pedro, Salvador, Abde</equipo>
+    <ultima_actualizacion>2026-06-01</ultima_actualizacion>
+  </configuracion>
+
+  <modulos>
+
+    <modulo id="ISO">
+      <nombre>Implantación de Sistemas Operativos</nombre>
+      <responsable>Pedro</responsable>
+      <temas>
+        <tema>Administración de Linux</tema>
+        <tema>Servicios de Red</tema>
+        <tema>Gestión de usuarios y permisos</tema>
+        <tema>Automatización con Bash</tema>
+      </temas>
+    </modulo>
+
+    <modulo id="PAR">
+      <nombre>Planificación y Administración de Redes</nombre>
+      <responsable>Salvador</responsable>
+      <temas>
+        <tema>VLANs y Trunking</tema>
+        <tema>Enrutamiento Estático</tema>
+        <tema>Protocolo OSPF</tema>
+        <tema>Configuración de Switches Cisco</tema>
+      </temas>
+    </modulo>
+
+    <modulo id="SEG">
+      <nombre>Seguridad y Alta Disponibilidad</nombre>
+      <responsable>Abde</responsable>
+      <temas>
+        <tema>Hardening de servidores</tema>
+        <tema>Cortafuegos con iptables</tema>
+        <tema>Acceso seguro con SSH</tema>
+        <tema>Gestión de certificados SSL/TLS</tema>
+      </temas>
+    </modulo>
+
+    <modulo id="BBDD">
+      <nombre>Bases de Datos</nombre>
+      <responsable>Pedro</responsable>
+      <temas>
+        <tema>Diseño relacional y SQL</tema>
+        <tema>Optimización de consultas</tema>
+        <tema>Copias de seguridad y restauración</tema>
+        <tema>Administración de MySQL/MariaDB</tema>
+      </temas>
+    </modulo>
+
+  </modulos>
+
 </wiki>

@@ -1,82 +1,132 @@
----
-layout: default
-title: Bienvenido a WIKI-GPT
----
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WIKI-GPT — Base de Conocimientos ASIR</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Syne:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="src/style.css" />
+</head>
+<body>
 
-# Bienvenido a WIKI-GPT
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo-block">
+        <span class="logo-tag">&lt;WIKI-GPT /&gt;</span>
+        <p class="logo-sub">Base de Conocimientos Técnica · Proyecto ASIR</p>
+      </div>
+      <div class="header-meta">
+        <span class="badge">Pedro · Salvador · Abde</span>
+        <span class="badge badge-accent">v1.0 — 2026</span>
+      </div>
+    </div>
+  </header>
 
-**La base de conocimientos técnica oficial del proyecto ASIR por Pedro, Salvador y Abde.**
+  <main>
 
----
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-inner">
+        <h1 class="hero-title">Documentación Técnica<br /><em>para ASIR</em></h1>
+        <p class="hero-desc">Una wiki colaborativa con contenido de Linux, Redes, Seguridad y Bases de Datos. Generada dinámicamente desde XML validado con XSD.</p>
+        <a href="#modulos" class="btn-primary">Explorar módulos ↓</a>
+      </div>
+      <div class="hero-code">
+        <pre><code><span class="c-tag">&lt;wiki&gt;</span>
+  <span class="c-tag">&lt;modulo</span> <span class="c-attr">id</span>=<span class="c-val">"ISO"</span><span class="c-tag">&gt;</span>
+    <span class="c-tag">&lt;nombre&gt;</span>Implantación de SO<span class="c-tag">&lt;/nombre&gt;</span>
+    <span class="c-tag">&lt;responsable&gt;</span>Pedro<span class="c-tag">&lt;/responsable&gt;</span>
+  <span class="c-tag">&lt;/modulo&gt;</span>
+<span class="c-tag">&lt;/wiki&gt;</span></code></pre>
+      </div>
+    </section>
 
-## 🛠️ Categorías Principales
-
-<div style="width: 100%; overflow-x: auto; margin-top: 30px;">
-  <table style="width: 100%; border-collapse: separate; border-spacing: 20px; border: none; background: transparent;">
-    <tr>
-      
-      <td style="border: 1px solid #ddd; border-radius: 8px; width: 25%; padding: 20px; text-align: center; box-shadow: 2px 2px 5px rgba(0,0,0,0.05); background: #ffffff; vertical-align: top;">
-        <img src="https://img.icons8.com/color/96/000000/linux.png" alt="Linux Icon" style="width: 80px; height: 80px; display: block; margin: 0 auto 15px;">
-        <h3 style="margin: 10px 0;">Linux & Servidores</h3>
-        <p style="font-size: 0.9em; color: #555; min-height: 60px;">Tutoriales sobre Bash, servicios (Apache, Nginx) y administración del sistema.</p>
-        <div style="margin-top: 15px;">
-          <a href="assets/Tema1.pdf" target="_blank" style="display: block; margin: 6px auto; padding: 6px 12px; background-color: #007bff; color: white; border-radius: 4px; text-decoration: none; font-size: 0.9em; width: 80%; max-width: 140px;">Tema 1- Linux</a>
-          <a href="assets/Tema1_1.pdf" target="_blank" style="display: block; margin: 6px auto; padding: 6px 12px; background-color: #007bff; color: white; border-radius: 4px; text-decoration: none; font-size: 0.9em; width: 80%; max-width: 140px;">Tema 2 - Linux</a>
-          <a href="assets/Tema1_2.pdf" target="_blank" style="display: block; margin: 6px auto; padding: 6px 12px; background-color: #007bff; color: white; border-radius: 4px; text-decoration: none; font-size: 0.9em; width: 80%; max-width: 140px;">Tema 3 - Linux</a>
+    <!-- TECNOLOGÍAS -->
+    <section class="section" id="tecnologias">
+      <div class="section-inner">
+        <h2 class="section-title"><span class="tag-prefix">#</span> Tecnologías empleadas</h2>
+        <div class="tech-grid">
+          <div class="tech-card">
+            <span class="tech-icon">🌐</span>
+            <strong>HTML5</strong>
+            <span>Estructura semántica de la página principal y layout de contenidos</span>
+          </div>
+          <div class="tech-card">
+            <span class="tech-icon">🎨</span>
+            <strong>CSS3</strong>
+            <span>Diseño visual, tarjetas, grid layout, variables y animaciones</span>
+          </div>
+          <div class="tech-card">
+            <span class="tech-icon">📄</span>
+            <strong>XML</strong>
+            <span>Almacenamiento estructurado de módulos, responsables y temas</span>
+          </div>
+          <div class="tech-card">
+            <span class="tech-icon">✅</span>
+            <strong>XSD</strong>
+            <span>Validación del esquema del XML con tipos y restricciones formales</span>
+          </div>
+          <div class="tech-card">
+            <span class="tech-icon">⚙️</span>
+            <strong>JavaScript</strong>
+            <span>Carga dinámica del XML mediante fetch y DOM API para renderizar tarjetas</span>
+          </div>
         </div>
-      </td>
+      </div>
+    </section>
 
-      <td style="border: 1px solid #ddd; border-radius: 8px; width: 25%; padding: 20px; text-align: center; box-shadow: 2px 2px 5px rgba(0,0,0,0.05); background: #ffffff; vertical-align: top;">
-        <img src="https://img.icons8.com/color/96/000000/network.png" alt="Network Icon" style="width: 80px; height: 80px; display: block; margin: 0 auto 15px;">
-        <h3 style="margin: 10px 0;">Redes & Comunicaciones</h3>
-        <p style="font-size: 0.9em; color: #555; min-height: 60px;">Protocolos, enrutamiento, configuración de switches y direccionamiento.</p>
-        <div style="margin-top: 15px;">
-          <a href="assets/Tema2.pdf" target="_blank" style="display: block; margin: 6px auto; padding: 6px 12px; background-color: #007bff; color: white; border-radius: 4px; text-decoration: none; font-size: 0.9em; width: 80%; max-width: 140px;">Tema 1 - Redes</a>
-          <a href="assets/Tema2_1.pdf" target="_blank" style="display: block; margin: 6px auto; padding: 6px 12px; background-color: #007bff; color: white; border-radius: 4px; text-decoration: none; font-size: 0.9em; width: 80%; max-width: 140px;">Tema 2 - Redes</a>
-          <a href="assets/Tema2_2.pdf" target="_blank" style="display: block; margin: 6px auto; padding: 6px 12px; background-color: #007bff; color: white; border-radius: 4px; text-decoration: none; font-size: 0.9em; width: 80%; max-width: 140px;">Tema 3 - Redes</a>
+    <!-- MÓDULOS DINÁMICOS -->
+    <section class="section" id="modulos">
+      <div class="section-inner">
+        <h2 class="section-title"><span class="tag-prefix">#</span> Módulos del proyecto</h2>
+        <p class="section-desc">Cargados dinámicamente desde <code>data/contenidos.xml</code></p>
+        <div id="app-container" class="modulos-grid">
+          <div class="loading-state">
+            <span class="spinner"></span>
+            <p>Cargando contenidos XML…</p>
+          </div>
         </div>
-      </td>
+      </div>
+    </section>
 
-      <td style="border: 1px solid #ddd; border-radius: 8px; width: 25%; padding: 20px; text-align: center; box-shadow: 2px 2px 5px rgba(0,0,0,0.05); background: #ffffff; vertical-align: top;">
-        <img src="https://img.icons8.com/color/96/000000/shield.png" alt="Shield Icon" style="width: 80px; height: 80px; display: block; margin: 0 auto 15px;">
-        <h3 style="margin: 10px 0;">Seguridad</h3>
-        <p style="font-size: 0.9em; color: #555; min-height: 60px;">Hardening de servidores, cortafuegos, SSH y gestión de certificados.</p>
-        <div style="margin-top: 15px;">
-          <a href="assets/Tema3.pdf" target="_blank" style="display: block; margin: 6px auto; padding: 6px 12px; background-color: #007bff; color: white; border-radius: 4px; text-decoration: none; font-size: 0.9em; width: 80%; max-width: 140px;">Tema 1 - Seguridad</a>
-          <a href="assets/Tema3_1.pdf" target="_blank" style="display: block; margin: 6px auto; padding: 6px 12px; background-color: #007bff; color: white; border-radius: 4px; text-decoration: none; font-size: 0.9em; width: 80%; max-width: 140px;">Tema 2 - Seguridad</a>
-          <a href="assets/Tema3_2.pdf" target="_blank" style="display: block; margin: 6px auto; padding: 6px 12px; background-color: #007bff; color: white; border-radius: 4px; text-decoration: none; font-size: 0.9em; width: 80%; max-width: 140px;">Tema 3 - Seguridad</a>
+    <!-- COLABORADORES -->
+    <section class="section section-dark" id="colaboradores">
+      <div class="section-inner">
+        <h2 class="section-title light"><span class="tag-prefix">#</span> Equipo &amp; Reparto de tareas</h2>
+        <div class="team-grid">
+          <div class="team-card">
+            <div class="team-avatar">P</div>
+            <h3>Pedro</h3>
+            <span class="role-badge">Administrador de Sistemas</span>
+            <p>Responsable del módulo <strong>ISO</strong> — Implantación de Sistemas Operativos. Contenidos: Administración de Linux y Servicios de Red.</p>
+          </div>
+          <div class="team-card">
+            <div class="team-avatar">S</div>
+            <h3>Salvador</h3>
+            <span class="role-badge">Especialista en Redes · CCNA</span>
+            <p>Responsable del módulo <strong>PAR</strong> — Planificación y Administración de Redes. Contenidos: VLANs, Trunking y Enrutamiento Estático.</p>
+          </div>
+          <div class="team-card">
+            <div class="team-avatar">A</div>
+            <h3>Abde</h3>
+            <span class="role-badge">Seguridad y Hardening</span>
+            <p>Responsable del módulo de <strong>Seguridad</strong>. Contenidos: Hardening de servidores, cortafuegos, SSH y gestión de certificados.</p>
+          </div>
         </div>
-      </td>
+      </div>
+    </section>
 
-      <td style="border: 1px solid #ddd; border-radius: 8px; width: 25%; padding: 20px; text-align: center; box-shadow: 2px 2px 5px rgba(0,0,0,0.05); background: #ffffff; vertical-align: top;">
-        <img src="https://img.icons8.com/color/96/000000/database.png" alt="Database Icon" style="width: 80px; height: 80px; display: block; margin: 0 auto 15px;">
-        <h3 style="margin: 10px 0;">Bases de Datos</h3>
-        <p style="font-size: 0.9em; color: #555; min-height: 60px;">Diseño SQL, optimización de consultas, copias de seguridad y mantenimiento.</p>
-        <div style="margin-top: 15px;">
-          <a href="assets/Tema4.pdf" target="_blank" style="display: block; margin: 6px auto; padding: 6px 12px; background-color: #007bff; color: white; border-radius: 4px; text-decoration: none; font-size: 0.9em; width: 80%; max-width: 140px;">Tema 1 - BBDD</a>
-          <a href="assets/Tema4_1.pdf" target="_blank" style="display: block; margin: 6px auto; padding: 6px 12px; background-color: #007bff; color: white; border-radius: 4px; text-decoration: none; font-size: 0.9em; width: 80%; max-width: 140px;">Tema 2 - BBDD</a>
-          <a href="assets/Tema4_2.pdf" target="_blank" style="display: block; margin: 6px auto; padding: 6px 12px; background-color: #007bff; color: white; border-radius: 4px; text-decoration: none; font-size: 0.9em; width: 80%; max-width: 140px;">Tema 3 - BBDD</a>
-        </div>
-      </td>
+  </main>
 
-    </tr>
-  </table>
-</div>
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>© 2024 WIKI-GPT Project &mdash; Contenido técnico para ASIR</p>
+    <p class="footer-stack"><code>HTML5</code> + <code>CSS3</code> + <code>XML/XSD</code> + <code>JavaScript</code></p>
+  </footer>
 
----
-
-## 👥 Colaboradores
-
-Conoce al equipo detrás de la documentación técnica.
-
-| Colaborador | Rol Principal |
-| :--- | :--- |
-| **Pedro** | Administrador de Sistemas (Linux) |
-| **Salvador** | Especialista en Redes y CCNA |
-| **Abde** | Seguridad y Hardening |
-
----
-
-<p style="text-align: center; font-size: 0.8em; color: #777; margin-top: 50px;">
-© 2024 WIKI-GPT Project. Contenido técnico para ASIR.
-</p>
+  <script src="src/app.js"></script>
+</body>
+</html>
