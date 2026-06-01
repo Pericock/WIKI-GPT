@@ -24,7 +24,7 @@ async function cargarContenidos() {
     container.innerHTML = '';
 
     // 3. Recorrer cada <modulo>
-    const modulos = xml.getElementsByTagName('modulo');
+    const modulos = xml.getElementsByTagName('modulo > modulo');
 
     if (modulos.length === 0) {
       container.innerHTML = '<p class="error-msg">No se encontraron módulos en el XML.</p>';
@@ -38,7 +38,7 @@ async function cargarContenidos() {
       const responsable = getTagText(mod, 'responsable');
 
       // Leer todos los <tema> dentro de <temas>
-      const temas = mod.getElementsByTagName('tema');
+      const temas = mod.getElementsByTagName('tema > tema');
 
       // 4. Construir HTML de la tarjeta
       const modDiv = document.createElement('div');
