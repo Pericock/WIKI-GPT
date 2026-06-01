@@ -14,10 +14,10 @@
       <nombre>Implantación de Sistemas Operativos</nombre>
       <responsable>Pedro</responsable>
       <temas>
-        <tema>Administracion de Windows</tema>
-        <tema>Administración y aseguramiento de la información.</tema>
-        <tema>Clientes del dominio</tema>
-        <tema>Administracion de dominios</tema>
+        <tema pdf="assets/Tema 4. Administración de software de base y sistemas Archivos (Windows server 2012) (1).pdf">Administracion de Windows</tema>
+        <tema pdf="assets/Tema 5 Administración y aseguramiento de la información. (1).pdf">Administración y aseguramiento de la información.</tema>
+        <tema pdf="assets/Tema 7 Clientes del dominio en Windows Server2012R2 (1).pdf">Clientes del dominio</tema>
+        <tema pdf="assets/Tema 6 Administracion de dominios 2012 r2 (2).pdf">Administracion de dominios</tema>
       </temas>
     </modulo>
 
