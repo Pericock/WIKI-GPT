@@ -1,22 +1,16 @@
 // ============================================================
-//  WIKI-GPT — app.js  (v4 - Corrección Definitiva)
-//  Fix: Enrutamiento absoluto seguro para GitHub Pages y Local
+//  WIKI-GPT — src/app.js (v5 - Versión Ultra-Resiliente)
+//  Fix: Enrutamiento absoluto seguro + Selector dinámico de Grid
 // ============================================================
 
-// Base path inteligente para evitar fallos de barras inclinadas (/) y mayúsculas en GitHub Pages
+// Base path inteligente para evitar fallos de rutas tanto en GitHub Pages como en Local
 const basePath = (() => {
   const hostname = window.location.hostname;
   const pathname = window.location.pathname;
 
-  // 1. Si estamos desplegados en GitHub Pages
   if (hostname.includes('github.io')) {
-    // Forzamos el nombre exacto del repositorio en mayúsculas. 
-    // Esto evita fallos si el usuario entra sin la barra '/' al final.
     return '/WIKI-GPT';
   }
-
-  // 2. Si estamos en local (Live Server o servidor local)
-  // Limpia '/index.html' o barras finales para dejar la ruta limpia
   return pathname.replace(/\/index\.html$/, '').replace(/\/$/, '');
 })();
 
@@ -28,7 +22,7 @@ function xmlURL() {
   return `${basePath}/data/contenidos.xml`;
 }
 
-// ── Mapa tema → PDF ───────────────────────────────────────────
+// ── Mapa tema → PDF (Coincidencia exacta con tu XML) ─────────────────
 const TEMA_PDF_MAP = {
   "Administración de Linux":           "Tema1.pdf",
   "Servicios de Red":                  "Tema1_1.pdf",
@@ -106,18 +100,25 @@ function buildCard(mod, index) {
 }
 
 async function cargarContenidos() {
-  const grid = document.getElementById('modulos-grid');
-  if (!grid) return;
+  // Selector inteligente: busca por ID, por clase, o directamente al contenedor que tiene el texto de carga
+  let grid = document.getElementById('modulos-grid') 
+          || document.querySelector('.modulos-grid')
+          || document.getElementById('modulos-container');
 
-  grid.innerHTML = `
-    <div class="loading-state">
-      <div class="spinner"></div>
-      <span>Cargando módulos…</span>
-    </div>`;
+  if (!grid) {
+    const loadingEl = Array.from(document.querySelectorAll('*'))
+      .find(el => el.textContent && el.textContent.includes('Cargando contenidos XML'));
+    if (loadingEl) grid = loadingEl.parentElement;
+  }
+
+  if (!grid) {
+    console.error("No se encontró el contenedor para renderizar los módulos.");
+    return;
+  }
 
   try {
     const response = await fetch(xmlURL());
-    if (!response.ok) throw new Error(`HTTP ${response.status} — ${xmlURL()}`);
+    if (!response.ok) throw new Error(`HTTP ${response.status} — No se pudo obtener el XML`);
 
     const text = await response.text();
     const xml  = new DOMParser().parseFromString(text, 'text/xml');
@@ -129,7 +130,7 @@ async function cargarContenidos() {
     if (modulos.length === 0) {
       grid.innerHTML = '<p class="error-msg">No se encontraron módulos en el XML.</p>';
       return;
-    </div>
+    }
 
     grid.innerHTML = '';
     Array.from(modulos).forEach((mod, i) => grid.appendChild(buildCard(mod, i)));
@@ -137,13 +138,17 @@ async function cargarContenidos() {
   } catch (e) {
     console.error(e);
     grid.innerHTML = `
-      <div class="error-msg">
-        <strong>⚠️ Error al cargar el XML</strong><br/>
+      <div class="error-msg" style="color: #ff6b6b; padding: 20px; text-align: center; background: rgba(255,107,107,0.1); border-radius: 8px; border: 1px solid #ff6b6b; margin-top: 20px;">
+        <strong>⚠️ Error Crítico al Cargar Datos</strong><br/>
         ${e.message}<br/>
-        <small>Ruta intentada: <code>${xmlURL()}</code><br/>
-        Asegúrate de que el archivo XML existe en la ruta correcta.</small>
+        <small style="opacity: 0.8;">Ruta: <code>${xmlURL()}</code></small>
       </div>`;
   }
 }
 
-window.addEventListener('DOMContentLoaded', cargarContenidos);
+// Asegura la ejecución inmediata tanto si el DOM ya cargó como si está en proceso
+if (document.readyState === 'loading') {
+  window.addEventListener('DOMContentLoaded', cargarContenidos);
+} else {
+  cargarContenidos();
+}
